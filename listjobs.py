@@ -31,7 +31,10 @@ for qfile in qlist:
         if os.path.exists(destination):
             jobdone = True
 
-        print('{result}{destination}'.format(
-                result='[' + (concolor['green'] + '✓' + concolor['end'] if jobdone else concolor['red'] + '✗' + concolor['end']) + '] ',
-                destination=destination,
-            ))
+        try:
+            print('{result}{destination}'.format(
+                    result='[' + (concolor['green'] + '✓' + concolor['end'] if jobdone else concolor['red'] + '✗' + concolor['end']) + '] ',
+                    destination=destination,
+                ))
+        except (BrokenPipeError, IOError):
+            sys.exit(0)
