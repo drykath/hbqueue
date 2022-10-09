@@ -42,7 +42,7 @@ its pid next to the queue json file it's working on, as well as write a
 "todo" file there when it's done with a job. The "todo" is written based
 on what the script sees when the job *starts*, though, so if you have
 multiple instances of the script running, the todo file might not be
-accurate. There's a `listoutputs.py` script that prints out the expected
+accurate. There's a `listjobs.py` script that prints out the expected
 files from a given queue json file so you can make sure you have
 everything that you expect.
 
